@@ -131,15 +131,17 @@ diffy_disable ()
 
 diffy_install ()
 {
-  fin exec --in=diffy rm -rf /app/diffy-worker
-  fin exec --in=diffy mkdir -p /app/diffy-worker
-  fin exec --in=diffy cd /app/diffy-worker && wget -qO- https://github.com/DiffyWebsite/diffy-worker/archive/refs/heads/chrome136.tar.gz | tar xz --strip-components=1
+  fin exec --in=diffy rm -rf /app/.diffy-worker
+  fin exec --in=diffy mkdir -p /app/.diffy-worker
+  fin exec --in=diffy cd /app/.diffy-worker && echo '' > test.txt
+#  fin exec --in=diffy cd /app/.diffy-worker && wget -qO- https://github.com/DiffyWebsite/diffy-worker/archive/refs/heads/chrome136.tar.gz | tar xz --strip-components=1
   echo ''
   echo '******************************************************************'
   echo 'Now we run "npm install". Hold on tight. This will take some time.'
   echo '******************************************************************'
   echo ''
-  fin exec --in=diffy  cd /app/diffy-worker && npm install
+  fin exec --in=diffy  cd /app/.diffy-worker && ls -la
+#  fin exec --in=diffy  cd /app/.diffy-worker && npm install
 }
 
 #------------------------------------------ Runtime -----------------------------------------------
