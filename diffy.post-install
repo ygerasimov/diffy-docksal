@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+fin diffy enable
+
+fin diffy install
+
+echo -e "${green}Diffy installed. Now you need to populate .env file.${NC}"

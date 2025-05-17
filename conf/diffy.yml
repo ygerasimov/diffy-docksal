@@ -1,0 +1,7 @@
+  # Diffy
+  diffy:
+    hostname: diffy
+    image: diffywebsite2/screenshot-worker
+    volumes:
+      - ${PROJECT_ROOT}/.diffy-worker:/app:rw
+    command: tail -f /dev/null
